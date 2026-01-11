@@ -14,16 +14,19 @@ function AdminLogin() {
 return (
   <div className="admin-login-container">
     <div className="admin-login-card">
-      <h2>Admin Login</h2>
+      <h2>Login</h2>
+      <p className="login-subtitle">(Login to start 1v1 quiz battle)</p>
+
 
       <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          placeholder="Admin Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+           type="email"
+           placeholder="Email"
+           value={email}
+           onChange={(e) => setEmail(e.target.value)}
+           required
+         />
+
 
         <input
           type="password"

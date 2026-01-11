@@ -1,47 +1,92 @@
+/* FULL SCREEN CENTER */
 .admin-login-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #242424;
+  background: radial-gradient(circle at top, #1a1f3c, #05050a);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* CARD */
 .admin-login-card {
-  background: #1a1a1a;
+  width: 340px;
   padding: 32px;
-  border-radius: 12px;
-  width: 320px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  background: rgba(20, 22, 40, 0.9);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  animation: popIn 0.4s ease;
 }
 
+/* TITLE */
 .admin-login-card h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
+.login-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #9aa4ff;
+  margin-bottom: 18px;
+}
+
+
+/* INPUTS */
 .admin-login-card input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 14px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #1c1f3a;
+  color: #ffffff;
   font-size: 14px;
 }
 
+.admin-login-card input::placeholder {
+  color: #9aa0ff;
+}
+
+.admin-login-card input:focus {
+  outline: none;
+  border-color: #6c7cff;
+  box-shadow: 0 0 0 2px rgba(108, 124, 255, 0.35);
+}
+
+/* BUTTON */
 .admin-login-card button {
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
+  background: linear-gradient(135deg, #6c7cff, #4e5bff);
+  color: #ffffff;
   font-size: 15px;
   font-weight: 600;
-  background: #646cff;
-  color: white;
   cursor: pointer;
+  box-shadow: 0 10px 25px rgba(108, 124, 255, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .admin-login-card button:hover {
-  background: #535bf2;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(108, 124, 255, 0.65);
+}
+
+/* ANIMATION */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
