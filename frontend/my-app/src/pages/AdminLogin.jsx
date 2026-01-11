@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./AdminLogin.css";
+
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -9,40 +11,33 @@ function AdminLogin() {
     console.log("Admin Login:", email, password);
     alert("Login clicked (API next step)");
   };
-
-  return (
-    <div style={{ padding: "40px" }}>
+return (
+  <div className="admin-login-container">
+    <div className="admin-login-card">
       <h2>Admin Login</h2>
 
       <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="email"
-            placeholder="Admin Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+        <input
+          type="email"
+          placeholder="Admin Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-        <br />
-
-        <div>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-
-        <br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
 
         <button type="submit">Login</button>
       </form>
     </div>
-  );
+  </div>
+);
 }
 
 export default AdminLogin;
